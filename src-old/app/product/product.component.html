@@ -1,0 +1,28 @@
+{{hello}}
+
+<div>
+  <h2> Product Entry</h2>
+  <br>
+  Product Id:
+  <input type="text" [(ngModel)]="productId">
+  <br>
+  Product Name:
+  <input type="text" [(ngModel)]="productName">
+  <br>
+  Product Price:
+  <input type="text" [(ngModel)]="productPrice">
+  <br>
+  Product Availablity:
+  <input type="checkbox" [(ngModel)]="productAvailablity">
+  <br>
+  Product Quantity:
+  <input type="text" [(ngModel)]="productQuantity">
+  <br>
+  <button (click)="prodctSave()" *ngIf="isSave"> Save </button>
+  <button (click)="update()" *ngIf="isUpdate">update</button>
+  <br>
+</div>
+<br>
+
+
+<app-product-detail [productDetails]="productEntryDetails" [currentDateTime]="now" (now)="setHello($event)" ></app-product-detail>

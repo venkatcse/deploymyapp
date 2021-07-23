@@ -1,0 +1,21 @@
+<h1>Product list</h1>
+
+<table>
+    <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Avilablity</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let product of productListDetails; let i = index">
+        <td appHighlight>{{product.productId}} <span>CNO <span>inside span</span></span></td>
+        <td appHighlight>{{product.productName | productNameCustom:"This Product ":" and the price is " }}</td>
+        <td appHighlight [ngStyle]="{'background-color': product.productPrice > 10 ? 'red' : 'green'}">{{product.productPrice | currency:'INR' }}</td>
+        <td appHighlight [ngClass]="product.productAviablity === true ? 'highlightGreen' : 'highlightRed'">{{product.productAviablity}}</td>
+        <td>
+            <button (click)="deleteProduct(i)">Delete</button>
+            <button (click)="editProduct(i)">Edit</button>
+        </td>
+    </tr>
+</table>

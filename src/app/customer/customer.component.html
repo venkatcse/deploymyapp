@@ -1,0 +1,53 @@
+<span>Data From other Component {{datafromOtherCompo}}</span>
+<br>
+<span><strong>Current Date and Time : </strong>{{now | date:'medium'}}</span>
+<div>
+    <h1>Customer Entry</h1>
+    <label for="">Customer Id
+        <input type="text" [(ngModel)]="customerId" disabled>
+    </label>
+    <br>
+    <label for="">Customer Name
+        <input type="text" [(ngModel)]="customerName">
+    </label>
+    <br>
+    <label for="">Customer Phone No
+        <input type="text" [(ngModel)]="customerPhoneNo">
+    </label>
+    <br>
+    <label for="">Customer address
+        <input type="text" [(ngModel)]="customerAddress">
+    </label>
+    <br>
+    <button class="btn btn-primary"(click)="save()" *ngIf="isSave">Save</button>
+    <button class="btn btn-primary" (click)="update()" *ngIf="isUpdate">Update</button>
+</div>
+
+
+<br>
+<br>
+<br>
+<div *ngIf="customersList.length !== 0">
+    <h1>Customer list</h1>
+
+    <table>
+        <tr>
+            <th>Customer Id</th>
+            <th>Customer Name</th>
+            <th>Customer Phone No</th>
+            <th>Customer Address</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let customer of customersList; let i = index">
+            <td>{{customer.customerId}}</td>
+            <td>{{customer.customerName}}</td>
+            <td>{{customer.customerPhoneNo}}</td>
+            <td>{{customer.customerAddress}}</td>
+            <td>
+                <button class="btn btn-primary"(click)="deleteCustomer(i)">Delete</button>
+                <button class="btn btn-primary"(click)="editCustomer(i)">Edit</button>
+            </td>
+        </tr>
+    </table>
+</div>
+

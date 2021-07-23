@@ -1,0 +1,25 @@
+
+<div>
+    <h1>ProductEntryDetails</h1>
+    <span>Current Date and Time {{currentDateTime}}</span>
+    <table>
+      <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Product Avilablity</th>
+        <th>productQuantity</th>
+      </tr>
+      <tr *ngFor="let productDetail of productDetails">
+        <td>{{productDetail.productId}}</td>
+        <td>{{productDetail.productName}}</td>
+        <td>{{productDetail.productPrice | currency:"RS"}}</td>
+        <td>{{productDetail.productAvailablity}}</td>
+        <td>{{productDetail.productQuantity}}</td>
+        <td>
+          <button (click)="deleteProduct(i)">Delete</button>
+          <button (click)="editProduct(i)">Edit</button>
+        </td>
+      </tr>
+    </table>
+  </div>

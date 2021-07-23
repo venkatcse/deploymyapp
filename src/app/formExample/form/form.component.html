@@ -1,0 +1,32 @@
+<form [formGroup]="studentForm" (ngSubmit)="createStudent()">
+    <div>
+        <label for="">Name
+            <input type="text" formControlName="name">
+        </label>
+        <span *ngIf="studentForm.controls.name.invalid">Name Required</span>
+    </div>
+    <div>
+        <label for="">Email ID
+            <input type="text" formControlName="emailId">
+        </label>
+        <span *ngIf="studentForm.controls.emailId.invalid">Email ID Required</span>
+    </div>
+    <div>
+        <label for="">Phone No
+            <input type="text" formControlName="phoneNo">
+        </label>
+        <span *ngIf="studentForm.controls.phoneNo.invalid">Phone No Required</span>
+    </div>
+    <div>
+        <label for="">Address
+            <input type="text" formControlName="address">
+        </label>
+        <span *ngIf="studentForm.controls.address.invalid">Address Required</span>
+    </div>
+    <div>
+        <label for="">Active
+            <input type="checkbox" formControlName="active">
+        </label>
+    </div>
+    <button type="submit" [disabled]="!studentForm.valid">Submit</button>
+</form>

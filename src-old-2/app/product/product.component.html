@@ -1,0 +1,31 @@
+
+<span><strong>Current Date and Time : </strong>{{currentDateTime | date:'medium'}}</span>
+<div>
+    <h1>Product Entry</h1>
+    <label for="">Product Id
+        <input type="text" [(ngModel)]="productId" disabled>
+    </label>
+    <br>
+    <label for="">Product Name
+        <input type="text" [(ngModel)]="productName">
+    </label>
+    <br>
+    <label for="">Product Price
+        <input type="text" [(ngModel)]="productPrice">
+    </label>
+    <br>
+    <label for="">Product avilablity
+        <input type="checkbox" [(ngModel)]="avilablity">
+    </label>
+    <br>
+    <button (click)="save()" *ngIf="isSave">Save</button>
+    <button (click)="update()" *ngIf="isUpdate">Update</button>
+</div>
+
+
+<br>
+<br>
+<br>
+<div *ngIf="productsList.length !== 0">
+    <app-product-details [productListDetails]="productsList" (now)="setCurrentDateTime($event)"></app-product-details>
+</div>

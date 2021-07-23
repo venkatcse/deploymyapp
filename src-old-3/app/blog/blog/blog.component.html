@@ -1,0 +1,24 @@
+<h1>Create Post</h1>
+<label for="">User Id</label>
+<input type="text" [(ngModel)]="userId">
+<br>
+<label for="">Title</label>
+<input type="text" [(ngModel)]="title">
+<br>
+<label for="">Body Content</label>
+<textarea name="" id="" cols="30" rows="10" [(ngModel)]="body"></textarea>
+<br>
+<button (click)="createPost()" *ngIf="isCreate">Create</button>
+<button (click)="updatePost()" *ngIf="!isCreate">Update</button>
+
+
+<h1>Blog Posts</h1>
+
+<ul>
+    <li *ngFor="let post of postsList">
+        <h3 (click)="edit(post.id)">{{post.title}}</h3>
+        <p>{{post.body}}</p>
+        <button (click)="deletePost(post.id)">Delete</button>
+        <hr>
+    </li>
+</ul>
