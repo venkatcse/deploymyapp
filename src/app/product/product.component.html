@@ -1,6 +1,8 @@
 
 <strong>Current Date and Time : </strong>{{currentDateTime | date:'medium'}}
-<div>
+<div class="container">
+<div class="jumbotron">
+    <div class="panel panel-primary">
     <h1>Product Entry</h1>
     <label for="">Product Id
         <input type="text" [(ngModel)]="productId" disabled>
@@ -20,12 +22,6 @@
     <br>
     <button class="btn btn-primary" (click)="save()" *ngIf="isSave">Save</button>
     <button class="btn btn-primary"(click)="update()" *ngIf="isUpdate">Update</button>
-</div>
-
-
-<br>
-<br>
-<br>
-<div *ngIf="productsList.length !== 0">
+<div class="jumbotron"*ngIf="productsList.length !== 0">
     <app-product-details [productListDetails]="productsList" (now)="setCurrentDateTime($event)"></app-product-details>
 </div>

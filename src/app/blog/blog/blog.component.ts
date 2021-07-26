@@ -85,4 +85,5 @@ export class BlogComponent implements OnInit {
       alert(error.status);
     })
   }
+  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 }

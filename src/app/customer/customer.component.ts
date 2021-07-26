@@ -27,6 +27,7 @@ export class CustomerComponent implements OnInit, OnChanges, DoCheck, AfterConte
   }
 
   ngOnInit() {
+    
     console.log('From ngOnmInit');
     this.customerId = this.customersList.length + 1;
     this.customersList.push({
@@ -94,5 +95,5 @@ export class CustomerComponent implements OnInit, OnChanges, DoCheck, AfterConte
   ngOnDestroy() {
     console.log('From ngOnDestroy')
   }
-
+  
 }

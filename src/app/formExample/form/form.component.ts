@@ -21,12 +21,12 @@ export class FormComponent implements OnInit {
       active: ['']
 
     });
-
+     
 
   }
 
   createStudent() {
     console.log(this.studentForm.controls.name.value);
   }
-
+  
 }

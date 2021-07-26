@@ -1,33 +1,31 @@
-<span>Data From other Component {{datafromOtherCompo}}</span>
+  
+  <span>Data From other Component {{datafromOtherCompo}}</span>
 <br>
 <span><strong>Current Date and Time : </strong>{{now | date:'medium'}}</span>
-<div>
+<div class="container">
+<div class="jumbotron">
+    <div class="panel panel-primary">
     <h1>Customer Entry</h1>
     <label for="">Customer Id
-        <input type="text" [(ngModel)]="customerId" disabled>
+        <input type="text" size="30" [(ngModel)]="customerId" disabled>
     </label>
     <br>
     <label for="">Customer Name
-        <input type="text" [(ngModel)]="customerName">
+        <input type="text" size="30" [(ngModel)]="customerName">
     </label>
     <br>
     <label for="">Customer Phone No
-        <input type="text" [(ngModel)]="customerPhoneNo">
+        <input type="text" size="30" [(ngModel)]="customerPhoneNo">
     </label>
     <br>
     <label for="">Customer address
-        <input type="text" [(ngModel)]="customerAddress">
+        <input type="text" size="30" [(ngModel)]="customerAddress">
     </label>
     <br>
     <button class="btn btn-primary"(click)="save()" *ngIf="isSave">Save</button>
     <button class="btn btn-primary" (click)="update()" *ngIf="isUpdate">Update</button>
 </div>
-
-
-<br>
-<br>
-<br>
-<div *ngIf="customersList.length !== 0">
+<div class="jumbotron" *ngIf="customersList.length !== 0">
     <h1>Customer list</h1>
 
     <table>
@@ -50,4 +48,5 @@
         </tr>
     </table>
 </div>
+
 
